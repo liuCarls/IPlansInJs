@@ -1,0 +1,5 @@
+api/node_modules/
+client/node_modules/
+/client/src/__App - 副本.js
+/client/src/__App.test - 副本.js
+/logs.txt
