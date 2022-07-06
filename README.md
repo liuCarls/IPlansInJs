@@ -7,11 +7,11 @@ One Test project
   CREATE DATABASE IF NOT EXISTS wserp;<br>
 3 create table <br>
   create table plans(<br>
-   plan_id int primary key auto_increment,<br>
-   plan_name char(20),<br>
-   plan_type int, -- 0,全不支持，1 Standard 2 Premium 3 All<br>
-    createdAt DATE,<br>
-    updatedAt DATE<br>
+    plan_id int primary key auto_increment,<br>
+    plan_name char(20),<br>
+    plan_type int, -- 0,全不支持，1 Standard 2 Premium 3 All<br>
+    createdAt DATETIME DEFAULT now(),,<br>
+    updatedAt DATETIME DEFAULT now()<br>
   )<br>
 4 add testing data<br>
   insert into plans values(1,'General', 3, now(),now());<br>

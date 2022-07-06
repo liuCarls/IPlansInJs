@@ -15,7 +15,7 @@ export const getPlanById = async (req, res) => {
     try {
         const plan = await Plan.findAll({
             where: {
-                id: req.params.id
+                plan_id: req.params.id
             }
         });
         res.json(plan[0]);
@@ -26,6 +26,7 @@ export const getPlanById = async (req, res) => {
  
 export const createPlan = async (req, res) => {
     try {
+      console.log("========req.body========"+req.body);
         await Plan.create(req.body);
         res.json({
             "message": "Plan Created"
@@ -39,7 +40,7 @@ export const updatePlan = async (req, res) => {
     try {
         await Plan.update(req.body, {
             where: {
-                id: req.params.id
+                plan_id: req.params.id
             }
         });
         res.json({
@@ -54,7 +55,7 @@ export const deletePlan = async (req, res) => {
     try {
         await Plan.destroy({
             where: {
-                id: req.params.id
+                plan_id: req.params.id
             }
         });
         res.json({
